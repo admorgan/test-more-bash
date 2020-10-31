@@ -64,14 +64,16 @@ Test::More:isnt-fail() {
 }
 
 ok() {
-  (exit ${1:-$?}) &&
-    Test::Tap:pass "$2" ||
+  if (exit "${1:-$?}"); then
+    Test::Tap:pass "$2"
+  else
     Test::Tap:fail "$2"
+  fi
 }
 
 like() {
   local got=$1 regex=$2 label=$3
-  if [[ $got =~ "$regex" ]]; then
+  if [[ $got =~ $regex ]]; then
     Test::Tap:pass "$label"
   else
     Test::Tap:fail "$label" Test::More:like-fail
@@ -84,7 +86,7 @@ Test::More:like-fail() {
 
 unlike() {
   local got=$1 regex=$2 label=$3
-  if [[ ! $got =~ "$regex" ]]; then
+  if [[ ! $got =~ $regex ]]; then
     Test::Tap:pass "$label"
   else
     Test::Tap:fail "$label" Test::More:unlike-fail
