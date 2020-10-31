@@ -23,11 +23,9 @@ skips=(
   SC1091  # Not following: bash+ was not specified as input (see shellcheck -x).
   # Items that can be fixed one by one
   SC2086  # Double quote to prevent globbing and word splitting.
-  SC2034  # Test__More_VERSION appears unused. Verify use (or export if used externally).
   SC2086  # Double quote to prevent globbing and word splitting.
   SC2015  # Note that A && B || C is not if-then-else. C may run when A is true.
   SC2076  # Don't quote right-hand side of =~, it'll match literally rather than as a regex
-  SC2050  # This expression is constant. Did you forget the $ on a variable?
 )
 
 skip=$(IFS=,; echo "${skips[*]}")

@@ -13,6 +13,8 @@ ok "$(true)" 'true is true'
 
 ok "$([ 123 -eq $((61+62)) ])" 'Math works'
 
+# Testing an absurdity, shellcheck didn't like
+# shellcheck disable=2050
 ok "$([[ ! team =~ I ]])" "There's no I in team"
 
 # diag "A msg for stderr"
