@@ -22,7 +22,6 @@ skips=(
   SC1090  # Can't follow non-constant source. Use a directive to specify location.
   SC1091  # Not following: bash+ was not specified as input (see shellcheck -x).
   # Items that can be fixed one by one
-  SC2006  # Use $(...) notation instead of legacy backticked `...`
   SC2086  # Double quote to prevent globbing and word splitting.
   SC2034  # Test__More_VERSION appears unused. Verify use (or export if used externally).
   SC2086  # Double quote to prevent globbing and word splitting.
